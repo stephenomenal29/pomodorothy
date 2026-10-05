@@ -55,7 +55,13 @@
     .main{
       display:grid;grid-template-columns:320px 1fr;gap:18px;align-items:center;
     }
-    @media (max-width: 720px){.main{grid-template-columns:1fr}}
+    @media (max-width: 720px){
+      #app{
+        align-items:flex-start;
+        padding:12px;
+      }
+      .main{grid-template-columns:1fr}
+      }
     .timerWrap{
       display:flex;align-items:center;justify-content:center;position:relative;
       min-height:300px;
