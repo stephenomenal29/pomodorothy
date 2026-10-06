@@ -397,7 +397,7 @@
     slider.style.background = `linear-gradient(90deg, var(--accent) ${pct}%, rgba(255,255,255,.12) ${pct}%)`;
   });
 
-  startBtn.onclick = () => { if (paused) { running = true; paused = false; timer = setInterval(() => { remaining -= 1; updateRing(); if (remaining <= 0) completeTask(); }, 1000); setState('Focus mode'); startBtn.disabled = true; pauseBtn.disabled = false; pauseBtn.textContent = 'Pause'; } else { duration = Number(slider.value) * 60; if (remaining <= 0 || remaining > duration) remaining = duration; start(); } updateRing(); };
+  startBtn.onclick = () => { if (paused) { start(); } else { duration = Number(slider.value) * 60; if (remaining <= 0 || remaining > duration) remaining = duration; start(); } updateRing(); };
   pauseBtn.onclick = pause;
   restartBtn.onclick = restart;
   completeBtn.onclick = completeTask;
